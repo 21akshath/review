@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ReelRate — Movie Reviews & Ratings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>ReelRate 🎬</h1>
+      <p class="tag">Discover • Review • Rate</p>
+    </div>
+
+    <div class="controls">
+      <input id="searchBox" placeholder="Search movies..." oninput="searchMovies()" />
+      <select id="sortSelect" onchange="sortMovies()">
+        <option value="">Sort</option>
+        <option value="rating">Top Rated</option>
+        <option value="year">Newest</option>
+        <option value="az">A → Z</option>
+      </select>
+      <button id="watchlistBtn" onclick="showWatchlist()">⭐ Watchlist (<span id="watchCount">0</span>)</button>
+      <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="movieGrid" class="movie-grid"></section>
+  </main>
+
+  <!-- Movie Details Modal -->
+  <div id="movieModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeMovieModal()">&times;</span>
+      <div class="modal-body">
+        <img id="modalPoster" alt="poster" />
+        <div class="modal-info">
+          <h2 id="modalTitle"></h2>
+          <p id="modalMeta"></p>
+          <p id="modalDesc"></p>
+          <p><a id="modalTrailer" href="#" target="_blank">▶ Watch Trailer</a></p>
+
+          <div id="avgRating"></div>
+
+          <hr />
+          <h4>Reviews</h4>
+          <div id="reviewsList"></div>
+
+          <div class="add-review">
+            <h4>Add Your Review</h4>
+            <textarea id="reviewText" placeholder="Write your review..." rows="3"></textarea>
+            <div class="row">
+              <label>Rating:</label>
+              <select id="ratingSelect">
+                <option value="5">5 — Excellent</option>
+                <option value="4">4 — Very Good</option>
+                <option value="3">3 — Good</option>
+                <option value="2">2 — Fair</option>
+                <option value="1">1 — Poor</option>
+              </select>
+              <button onclick="submitReview()" class="primary">Submit</button>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button id="toggleWatchBtn" onclick="toggleWatchlistCurrent()">⭐ Add to Watchlist</button>
+            <button onclick="closeMovieModal()" class="secondary">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Watchlist Modal -->
+  <div id="watchModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeWatchModal()">&times;</span>
+      <h2>Your Watchlist</h2>
+      <div id="watchItems"></div>
+      <div style="text-align:right;margin-top:12px">
+        <button onclick="clearWatchlist()" class="danger">Clear</button>
+        <button onclick="closeWatchModal()" class="secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
