@@ -308,4 +308,38 @@ body.light .review {
   .poster {
     height: 220px;
   }
+
+}
+/* Watchlist rows (make them colorful like mini cards) */
+.watch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #7c5cff, #60d394);
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.watch-row:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+.watch-row button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.watch-row .view-btn {
+  background: linear-gradient(90deg, #ff9a9e, #ff6b6b);
+  color: #fff;
+}
+.watch-row .fav-btn {
+  background: linear-gradient(90deg, #ffb86b, #ff6b6b);
+  color: #111;
 }
