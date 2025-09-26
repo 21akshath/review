@@ -177,5 +177,59 @@ body.light .review {
               0 0 20px rgba(255, 107, 107, 0.7);
   transform: scale(1.05);
 }
+/* Top Rated Section Styling */
+#topRatedSection {
+  margin: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #7c5cff22, #60d39422);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+#topRatedSection h2 {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: var(--accent2);
+  text-align: center;
+}
+
+/* Make Top Rated cards larger */
+#topRatedGrid .card {
+  transform: scale(1.05);
+  border: 2px solid var(--accent2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#topRatedGrid .card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(124, 92, 255, 0.6);
+}
+/* Surprise Me Button */
+.controls button.surprise {
+  background: linear-gradient(90deg, #ff6b6b, #ffb86b, #60d394, #7c5cff);
+  background-size: 300% 300%;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(124, 92, 255, 0.6);
+  animation: gradientMove 5s ease infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.controls button.surprise:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 14px rgba(255, 184, 107, 0.9),
+              0 0 20px rgba(124, 92, 255, 0.8);
+}
+
+/* Moving gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 
