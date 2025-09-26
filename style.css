@@ -13,14 +13,19 @@ body.light { background:#f5f8fb; color:#1b1b1b; }
 
 /* header */
 header{ display:flex; justify-content:space-between; align-items:center; padding:18px 22px; gap:12px; }
-.brand h1{
-  margin:0;
-  font-size:1.9rem;
-  font-weight:800;
-  background:linear-gradient(90deg,#ff6b6b,#7c5cff,#60d394);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  letter-spacing:1px;
+.brand h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #7c5cff, #60d394);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light .brand h1 {
+  background: linear-gradient(90deg, #ff6b6b, #ffb86b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .brand .tag{
   margin:4px 0 0 0;
@@ -172,4 +177,5 @@ body.light .review {
               0 0 20px rgba(255, 107, 107, 0.7);
   transform: scale(1.05);
 }
+
 
