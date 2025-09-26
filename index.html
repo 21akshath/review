@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CineScope 🎥 — Movie Reviews & Ratings</title>
+  <title>CineScope 🎬 — Movie Reviews & Ratings</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png"> <!-- Favicon -->
 </head>
 <body>
   <header>
     <div class="brand">
-      <h1>🎥 CineScope</h1>
-      <p class="tag">Discover • Rate • Review • Relive</p>
+      <h1>CineScope 🎬</h1>
+      <p class="tag">Discover • Review • Rate</p>
     </div>
 
     <div class="controls">
@@ -22,13 +21,31 @@
         <option value="year">Newest</option>
         <option value="az">A → Z</option>
       </select>
+      <select id="genreSelect" onchange="filterByGenre()">
+        <option value="">All Genres</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Romance">Romance</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+      </select>
+      <button onclick="surpriseMe()">🎲 Surprise Me</button>
       <button id="watchlistBtn" onclick="showWatchlist()">⭐ Watchlist (<span id="watchCount">0</span>)</button>
       <button id="themeBtn" onclick="toggleTheme()">🌙</button>
     </div>
   </header>
 
   <main>
-    <section id="movieGrid" class="movie-grid"></section>
+    <section id="topRatedSection">
+      <h2>🏆 Top Rated Movies</h2>
+      <div id="topRatedGrid" class="movie-grid"></div>
+    </section>
+
+    <section>
+      <h2>🎥 All Movies</h2>
+      <div id="movieGrid" class="movie-grid"></div>
+    </section>
   </main>
 
   <!-- Movie Details Modal -->
