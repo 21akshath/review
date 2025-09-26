@@ -178,3 +178,52 @@ function toggleTheme(){ document.body.classList.toggle("light"); }
   displayGrid();
   window.onclick = (e) => { if(e.target.classList.contains("modal")) e.target.style.display = "none"; };
 })();
+/* --- Extra Features --- */
+
+// Filter by Genre
+function filterByGenre() {
+  const val = document.getElementById("genreSelect").value;
+  if (!val) return displayGrid(movies);
+  const filtered = movies.filter(m => m.genre.toLowerCase() === val.toLowerCase());
+  displayGrid(filtered);
+}
+
+// Top Rated Section
+function displayTopRated() {
+  const sorted = [...movies].sort((a,b)=>calcAvg(b)-calcAvg(a));
+  const top3 = sorted.slice(0,3);
+  const grid = document.getElementById("topRatedGrid");
+  grid.innerHTML = "";
+  top3.forEach(m=>{
+    const card = document.createElement("div");
+    card.className = "card";
+    const avg = calcAvg(m);
+    card.innerHTML = `
+      <img class="poster" src="${m.poster}" alt="${m.title}" />
+      <div class="title">${m.title}</div>
+      <div class="meta">${m.genre} • ${m.year} • ${starsHtml(avg)}</div>
+      <div class="row">
+        <button class="btn view-btn" onclick="openMovie(${m.id})">View Details</button>
+        <button class="btn fav-btn" onclick="toggleWatchlist(${m.id}, this)">${watchlist.includes(m.id)?'★ In Watchlist':'☆ Add'}</button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// Surprise Me button
+function surpriseMe() {
+  if (movies.length === 0) return;
+  const rand = movies[Math.floor(Math.random() * movies.length)];
+  openMovie(rand.id);
+}
+
+/* --- Update init to include Top Rated --- */
+(function init(){
+  loadState();
+  updateWatchCount();
+  displayGrid();
+  displayTopRated();
+  // close modal on outside click
+  window.onclick = (e) => { if(e.target.classList.contains("modal")) e.target.style.display = "none"; };
+})();
