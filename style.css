@@ -119,3 +119,57 @@ body.light .review {
               0 0 20px rgba(255, 184, 107, 0.7);
   transform: scale(1.05);
 }
+/* Close Buttons (Secondary) */
+.modal-actions .secondary,
+#watchModal .secondary {
+  background: linear-gradient(90deg, #7c5cff, #60d394);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-actions .secondary:hover,
+#watchModal .secondary:hover {
+  background: linear-gradient(90deg, #60d394, #7c5cff);
+  box-shadow: 0 0 10px rgba(124, 92, 255, 0.7);
+  transform: scale(1.05);
+}
+/* Modal Top-right Close Button */
+.close-btn {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff6b6b;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff9a9e;
+  transform: scale(1.2) rotate(10deg);
+}
+/* Danger Button (Clear Watchlist) */
+.danger {
+  background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+  transition: all 0.3s ease;
+}
+
+.danger:hover {
+  background: linear-gradient(90deg, #ff6b6b, #ff4d4d);
+  box-shadow: 0 0 14px rgba(255, 77, 77, 0.9),
+              0 0 20px rgba(255, 107, 107, 0.7);
+  transform: scale(1.05);
+}
+
